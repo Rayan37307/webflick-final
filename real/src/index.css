@@ -1,0 +1,132 @@
+@import "tailwindcss";
+:root {
+  /* ==================================== */
+  /* Custom Colors            */
+  /* ==================================== */
+
+  /* Sapphire Palette */
+  --color-sapphire-900: #0a192f; /* Deep background */
+  --color-sapphire-800: #112240; /* Card background */
+  --color-sapphire-700: #233554; /* Border/Hover */
+
+  /* Neon Palette */
+  --color-neon-cyan: #00f2ff;
+  --color-neon-green: #39ff14;
+  --color-neon-purple: #b026ff;
+
+
+  /* ==================================== */
+  /* Font Families             */
+  /* ==================================== */
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+/* ==================================== */
+/* Keyframes               */
+/* ==================================== */
+
+@keyframes flicker {
+  /* Reference your custom color variable for the glow effect */
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    /* Using your neon-cyan color variable for the drop-shadow/glow */
+    filter: drop-shadow(0 0 1px var(--color-neon-cyan)) drop-shadow(0 0 5px rgba(0, 242, 255, 0.8));
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    filter: none;
+  }
+}
+
+/* Note: You would also need to define the standard 'pulse' keyframe here,
+   as it is a built-in Tailwind keyframe you referenced in 'pulse-slow'.
+   Example 'pulse' keyframe: */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+
+/* ==================================== */
+/* Animation Utilities         */
+/* ==================================== */
+
+.animate-flicker {
+  /* flicker: 'flicker 3s linear infinite' */
+  animation: flicker 3s linear infinite;
+}
+
+.animate-pulse-slow {
+  /* pulse-slow: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' */
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base variables applied to the body */
+body {
+  /* Default (Light Mode) */
+  --color-bg-primary: #ffffff; /* Example light mode background */
+  --color-text-primary: #1f2937; /* Example light mode text */
+
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --color-bg-primary: var(--color-sapphire-900); /* Use your deep background */
+  --color-text-primary: #f8f8f8; /* Light text for dark background */
+
+  /* Override dark mode specific utility classes if needed */
+  .dark\:bg-sapphire-900 {
+    background-color: var(--color-sapphire-900);
+  }
+}
+
+/* ==================================== */
+/* Text Color Utilities        */
+/* ==================================== */
+
+.text-sapphire-900 { color: var(--color-sapphire-900); }
+.text-sapphire-800 { color: var(--color-sapphire-800); }
+.text-sapphire-700 { color: var(--color-sapphire-700); }
+
+.text-neon-cyan   { color: var(--color-neon-cyan); }
+.text-neon-green  { color: var(--color-neon-green); }
+.text-neon-purple { color: var(--color-neon-purple); }
+
+
+/* ==================================== */
+/* Background Color Utilities    */
+/* ==================================== */
+
+.bg-sapphire-900 { background-color: var(--color-sapphire-900); }
+.bg-sapphire-800 { background-color: var(--color-sapphire-800); }
+.bg-sapphire-700 { background-color: var(--color-sapphire-700); }
+
+.bg-neon-cyan   { background-color: var(--color-neon-cyan); }
+.bg-neon-green  { background-color: var(--color-neon-green); }
+.bg-neon-purple { background-color: var(--color-neon-purple); }
+
+
+/* ==================================== */
+/* Border Color Utilities       */
+/* ==================================== */
+
+.border-sapphire-900 { border-color: var(--color-sapphire-900); }
+.border-sapphire-800 { border-color: var(--color-sapphire-800); }
+.border-sapphire-700 { border-color: var(--color-sapphire-700); }
+
+.border-neon-cyan   { border-color: var(--color-neon-cyan); }
+.border-neon-green  { border-color: var(--color-neon-green); }
+.border-neon-purple { border-color: var(--color-neon-purple); }
+
+/* Font Families */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}

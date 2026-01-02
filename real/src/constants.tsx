@@ -1,6 +1,5 @@
-import React from 'react';
-import { Monitor, ShoppingBag, Code, Zap, Layers, BarChart3, Aperture } from 'lucide-react';
-import { ServiceItem, NavItem } from './types';
+import { Monitor, ShoppingBag, Code, Layers, BarChart3, Aperture } from 'lucide-react';
+import type { ServiceItem, NavItem } from './types';
 
 export const APP_NAME = "WebFlick";
 export const MISSION_STATEMENT = "Turning great ideas into digital realities through agile design and robust development.";

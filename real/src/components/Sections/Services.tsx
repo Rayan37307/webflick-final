@@ -14,7 +14,7 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {SERVICES.map((service, index) => (
+          {SERVICES.map((service) => (
             <div 
               key={service.id}
               className="group relative p-8 bg-sapphire-800 rounded-2xl border border-sapphire-700 hover:border-neon-cyan/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,242,255,0.1)]"
